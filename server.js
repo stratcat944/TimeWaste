@@ -17,6 +17,7 @@ app.get('/', function(req, res){
 
 // Authentication
 app.post('/api/user/signup', authenticationController.signup);
+app.post('/api/user/login', authenticationController.login);
 
 app.listen('3030', function(){
 	console.log("Listening on localhost:3030");

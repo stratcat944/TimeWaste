@@ -3,12 +3,12 @@
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"></script>
 		<link rel="stylesheet" href="app/css/main.css" />
 	</head>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
 		<div class="container">
 			<div>
 				<input type="text" ng-model="login.email" />
 				<input type="password" ng-model="login.password" />
-				<button>Login</button>
+				<button ng-click='logUserIn()'>Login</button>
 				<a ui-sref="signUp">Create an Account</a>
 			</div>
 		</div>
@@ -21,5 +21,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 	<script src="app/app.js"></script>
 	<script src="app/signup/signup-controller.js"></script>
+	<script src="app/navigation/navigation-controller.js"></script>
 
 </html>

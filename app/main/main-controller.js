@@ -27,10 +27,25 @@
 				if (initial){
 					$scope.wastes = response;
 				} else {
+					if (response.length > $scope.wastes.length){
 					$scope.incomingWastes = response;
+					}
 				}
 			})
 		};
+
+		$interval(function(){
+			getWastes(false);
+			if ($scope.incomingWastes){
+			$scope.difference = $scope.incomingWastes.length - $scope.wastes.length;
+			}
+			console.log("This is working!");
+		}, 500);
+
+		$scope.setNewWastes = function(){
+			$scope.wastes = angular.copy($scope.incomingWastes);
+			$scope.incomingWastes = undefined;
+		}
 
 		// Init
 		getWastes(true);

@@ -40,7 +40,7 @@
 			$scope.difference = $scope.incomingWastes.length - $scope.wastes.length;
 			}
 			console.log("This is working!");
-		}, 500);
+		}, 5000);
 
 		$scope.setNewWastes = function(){
 			$scope.wastes = angular.copy($scope.incomingWastes);

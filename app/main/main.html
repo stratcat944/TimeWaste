@@ -4,8 +4,8 @@
 	</div>
 	<div class="row">
 		<table class="waste-section">
-			<tr ng-show="incomingWastes">
-				<a ng-click="setNewWastes()">There are {{difference}} new wastes!</a>
+			<tr>
+				<a ng-if="incomingWastes.length > 0" ng-click="setNewWastes()">There are {{difference}} new wastes!</a>
 			</tr>
 			<tr ng-repeat="waste in wastes">
 				<td>

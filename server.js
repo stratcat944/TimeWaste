@@ -32,6 +32,7 @@ app.post('/api/profile/updateBio', profileController.updateBio);
 
 // Waste
 app.post('/api/waste/post', wasteController.postWaste);
+app.get('/api/waste/get', wasteController.getWastes);
 
 app.listen('3030', function(){
 	console.log("Listening on localhost:3030");

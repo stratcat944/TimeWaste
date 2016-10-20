@@ -20,6 +20,19 @@
 					console.error(error);
 				})
 			}
-		}
+		};
+
+		function getWastes(initial){
+			$http.get('api/waste/get').success(function(response){
+				if (initial){
+					$scope.wastes = response;
+				} else {
+					$scope.incomingWastes = response;
+				}
+			})
+		};
+
+		// Init
+		getWastes(true);
 	}]);
 }());

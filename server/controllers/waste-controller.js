@@ -15,11 +15,26 @@ module.exports.postWaste = function(req, res){
 }
 
 module.exports.getWastes = function(req, res){
-	Waste.find({}).sort({date: -1}).exec(function(err, allWastes){
-		if (err){
-			res.error(err);
-		} else {
-			res.json(allWastes);
+	console.log(req.body);
+	if (!req.body.following){
+		Waste.find({}).sort({date: -1}).exec(function(err, allWastes){
+			if (err){
+				res.error(err);
+			} else {
+				res.json(allWastes);
+			}
+		})
+	} else {
+		var requestedWastes = [];
+		for (var i = 0, len = req.body.following.length; i < len; i++){
+			requestedWastes.push({userId: req.body.following[i].userId});
 		}
-	})
+		Waste.find({$or: requestedWastes}).sort({date: -1}).exec(function(err, allWastes){
+			if (err){
+				res.error(err)
+			} else {
+				res.json(allWastes);
+			}
+		})
+	}
 }

@@ -33,7 +33,7 @@ app.post('/api/profile/updateBio', profileController.updateBio);
 
 // Waste
 app.post('/api/waste/post', wasteController.postWaste);
-app.get('/api/waste/get', wasteController.getWastes);
+app.post('/api/waste/get', wasteController.getWastes);
 
 // User
 app.get('/api/users/get', usersController.getUsers);

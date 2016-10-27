@@ -13,5 +13,13 @@
 				console.log("Following ", wasterId);
 			})
 		}
+		$scope.checkIsFollowing = function(wasterId){
+			for (var i = 0, len = $scope.user.following.length; i < len; i++){
+				if ($scope.user.following[i].userId === wasterId){
+					return true;
+				}
+			}
+			return false;
+		}
 	}]);
 }());

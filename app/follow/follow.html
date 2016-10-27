@@ -1,0 +1,6 @@
+<ul>
+	<li ng-repeat="waster in users" ng-show="user._id !== waster._id">
+		{{waster.email}}
+		<a ng-click="follow(user._id, waster._id)">Follow</a>
+	</li>
+</ul>
